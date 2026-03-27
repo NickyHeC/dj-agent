@@ -383,7 +383,7 @@ async def _play_track(spotify: SpotifyClient, query: str) -> None:
             return
         t = tracks[0]
         subprocess.run(
-            ["osascript", "-e", f'tell application "Spotify" to play track "{t["uri"]}"'],
+            ["osascript", "-e", f'tell application "Spotify" to open location "{t["uri"]}"'],
             check=False,
         )
         print(f"  Playing \"{t['name']}\" - {t['artist']}", flush=True)
